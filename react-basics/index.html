@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>React | Net Ninja</title>
+		<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+	<body>
+		<h1>My React website</h1>
+		<div id="banner"></div>
+
+		<footer>
+			<p>footer</p>
+		</footer>
+		<script type="text/babel">
+			const Banner = () => {
+				const title = 'Welcome to my webiste '
+				const subtitle = 'This is a website for learning react'
+				const address = 'https://netninja.dev'
+
+				// const handleClick = () => {
+				//   console.log('You clicked Me!')
+				//   console.log('You clicked Me!', title)
+				// }
+				// <button onClick={handleClick}>Click Me</button>
+
+				return (
+					// jsx = JavaScript XML
+					// don't use class for css, use className
+					// only allowed one signle root parent element
+					<div className="banner"> 
+						<h2>{title.toUpperCase()}</h2>
+						<p>{subtitle}</p>
+						<p>Today's date is: {new Date().toDateString()}</p>
+						<p>Random number: {Math.random() * 100}</p>
+						<a href={address}>Visit the Net Ninja site</a>
+						<button onClick={() => console.log('hello')}>Click Me</button>
+					</div>
+				)
+			}
+			// render the component to the DOM
+			ReactDOM.render(<Banner/>, document.getElementById('banner'))
+		</script>
+	</body>
+</html>
